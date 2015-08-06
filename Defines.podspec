@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Defines"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "A small collection of Swift structs to replace #define statements in Obj-C."
   s.homepage         = "https://github.com/BellAppLab/Defines"
   s.license          = 'MIT'
