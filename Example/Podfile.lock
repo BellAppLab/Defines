@@ -1,0 +1,14 @@
+PODS:
+  - Defines (0.1.0)
+
+DEPENDENCIES:
+  - Defines (from `../`)
+
+EXTERNAL SOURCES:
+  Defines:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Defines: 3538f7932c3c53c6c243ddebb3020705971fa348
+
+COCOAPODS: 0.38.2
