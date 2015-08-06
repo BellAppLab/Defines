@@ -1,6 +1,6 @@
 import UIKit
 
-struct Screen
+public struct Screen
 {
     static let Width = UIScreen.mainScreen().bounds.size.width
     static let Height = UIScreen.mainScreen().bounds.size.height
@@ -9,7 +9,7 @@ struct Screen
     static let IsRetina = UIScreen.mainScreen().scale > 1
 }
 
-struct Device
+public struct Device
 {
     static let IsiPad = UIDevice.currentDevice().userInterfaceIdiom == .Pad
     static let IsiPhone4OrLess =  !IsiPad && Screen.MaxLength < 568.0
@@ -18,14 +18,14 @@ struct Device
     static let IsiPhone6p = !IsiPad && Screen.MaxLength == 736.0
 }
 
-struct Version
+public struct Version
 {
     static let IsiOS7 = (UIDevice.currentDevice().systemVersion as NSString).doubleValue < 8.0
     static let IsiOS8 = (UIDevice.currentDevice().systemVersion as NSString).doubleValue < 9.0
     static let IsiOS9 = (UIDevice.currentDevice().systemVersion as NSString).doubleValue < 10.0
 }
 
-struct App
+public struct App
 {
     static let IsScaledUp = Device.IsiPhone6p && UIScreen.mainScreen().nativeScale > UIScreen.mainScreen().scale
     static func BundleId() -> String {
