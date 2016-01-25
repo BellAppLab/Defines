@@ -18,6 +18,12 @@ public struct Defines
         public static let IsiPhone5 = !IsiPad && Screen.MaxLength == 568.0
         public static let IsiPhone6 = !IsiPad && Screen.MaxLength == 667.0
         public static let IsiPhone6p = !IsiPad && Screen.MaxLength == 736.0
+#if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
+        public static let IsSimulator = true
+#else
+        public static let IsSimulator = false
+#endif
+        
     }
     
     public struct Version
