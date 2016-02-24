@@ -7,6 +7,14 @@
 
 ## Usage
 
+```
+import Defines
+
+if Defines.Device.IsSimulator {
+    //Don't ask permission to send push notifications
+}
+```
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
