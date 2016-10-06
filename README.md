@@ -1,34 +1,25 @@
 # Defines
 
-[![CI Status](http://img.shields.io/travis/Bell App Lab/Defines.svg?style=flat)](https://travis-ci.org/Bell App Lab/Defines)
-[![Version](https://img.shields.io/cocoapods/v/Defines.svg?style=flat)](http://cocoapods.org/pods/Defines)
-[![License](https://img.shields.io/cocoapods/l/Defines.svg?style=flat)](http://cocoapods.org/pods/Defines)
-[![Platform](https://img.shields.io/cocoapods/p/Defines.svg?style=flat)](http://cocoapods.org/pods/Defines)
+A small collection of Swift structs to replace #define statements in Obj-C.
 
 ## Usage
 
-```
-import Defines
-
+```swift
 if Defines.Device.IsSimulator {
     //Don't ask permission to send push notifications
 }
 ```
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Requirements
+
+* iOS 8+
+* Swift 3.0
 
 ## Installation
 
-### CocoaPods
+### Cocoapods
 
-Defines is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "Defines"
-```
+Because of [this](http://stackoverflow.com/questions/39637123/cocoapods-app-xcworkspace-does-not-exists), I've dropped support for Cocoapods on this repo. I cannot have production code rely on a dependency manager that breaks this badly. 
 
 ### Git Submodules
 
@@ -40,10 +31,10 @@ To install Defines using git submodules:
 
 ```
 cd toYourProjectsFolder
-git submodule add -b Submodule --name Defines https://github.com/BellAppLab/Defines.git
+git submodule add --name Defines https://github.com/BellAppLab/Defines.git
 ```
 
-Navigate to the new Defines folder and drag the Pods folder to your Xcode project.
+Navigate to the new Defines folder and drag the `Source` folder into your Xcode project.
 
 ## Author
 
