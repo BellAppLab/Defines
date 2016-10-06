@@ -5,7 +5,7 @@ A small collection of Swift structs to replace #define statements in Obj-C.
 ## Usage
 
 ```swift
-if Defines.Device.IsSimulator {
+if Defines.Device.isSimulator {
     //Don't ask permission to send push notifications
 }
 ```
