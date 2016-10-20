@@ -36,7 +36,13 @@ cd toYourProjectsFolder
 git submodule add --name Defines https://github.com/BellAppLab/Defines.git
 ```
 
-Navigate to the new Defines folder and drag the `Source` folder into your Xcode project.
+**Swift 2 support**
+
+```
+git submodule add -b swift2 --name Defines https://github.com/BellAppLab/Defines.git
+```
+
+Then, navigate to the new Defines folder and drag the `Source` folder into your Xcode project.
 
 ## Author
 
