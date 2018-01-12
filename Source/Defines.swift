@@ -16,8 +16,9 @@ public struct Defines
         public static let isiPad = UIDevice.current.userInterfaceIdiom == .pad
         public static let isiPhone4OrLess =  !isiPad && Screen.maxLength < 568.0
         public static let isiPhone5orSE = !isiPad && Screen.maxLength == 568.0
-        public static let isiPhone6or7 = !isiPad && Screen.maxLength == 667.0
-        public static let isiPhone6pOr7p = !isiPad && Screen.maxLength == 736.0
+        public static let isiPhone6or7or8 = !isiPad && Screen.maxLength == 667.0
+        public static let isiPhone6pOr7por8p = !isiPad && Screen.maxLength == 736.0
+        public static let isiPhoneX = !isiPad && Screen.maxLength == 812.0
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
         public static let isSimulator = true
         #else
@@ -32,6 +33,7 @@ public struct Defines
         public static let isiOS8 = (UIDevice.current.systemVersion as NSString).doubleValue < 9.0
         public static let isiOS9 = (UIDevice.current.systemVersion as NSString).doubleValue < 10.0
         public static let isiOS10 = (UIDevice.current.systemVersion as NSString).doubleValue < 11.0
+        public static let isiOS11 = (UIDevice.current.systemVersion as NSString).doubleValue < 12.0
     }
     
     public struct App
