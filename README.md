@@ -2,7 +2,7 @@
 
 A small collection of Swift structs to replace #define statements in Obj-C.
 
-_v0.5.0_
+_v0.5.1_
 
 ## Usage
 

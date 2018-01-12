@@ -16,8 +16,8 @@ public struct Defines
         public static let isiPad = UIDevice.current.userInterfaceIdiom == .pad
         public static let isiPhone4OrLess =  !isiPad && Screen.maxLength < 568.0
         public static let isiPhone5orSE = !isiPad && Screen.maxLength == 568.0
-        public static let isiPhone6or7or8 = !isiPad && Screen.maxLength == 667.0
-        public static let isiPhone6pOr7por8p = !isiPad && Screen.maxLength == 736.0
+        public static let isiPhone6AndAbove = !isiPad && Screen.maxLength == 667.0
+        public static let isiPhonePlus = !isiPad && Screen.maxLength == 736.0
         public static let isiPhoneX = !isiPad && Screen.maxLength == 812.0
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
         public static let isSimulator = true
@@ -38,7 +38,7 @@ public struct Defines
     
     public struct App
     {
-        public static let isScaledUp = Device.isiPhone6pOr7p && UIScreen.main.nativeScale > UIScreen.main.scale
+        public static let isScaledUp = (Device.isiPhonePlus || Device.isiPhoneX) && UIScreen.main.nativeScale > UIScreen.main.scale
         public static func bundleId() -> String {
             return Bundle.main.bundleIdentifier!
         }
