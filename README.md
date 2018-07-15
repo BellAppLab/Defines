@@ -8,9 +8,17 @@
 
 ![Defines](./Images/defines.png)
 
-A small collection of Swift structs to replace #define statements in Obj-C.
+A collection of runtime checks written in Swift.
 
-_v0.5.1_
+In other words, simply do this:
+
+```swift
+if Defines.Device.isSimulator {
+    //Don't ask permission to send push notifications
+}
+```
+
+And get on with your life. 
 
 ## Usage
 
@@ -71,7 +79,7 @@ Bell App Lab, apps@bellapplab.com
 
 ### Credits
 
-[Logo image](https://thenounproject.com/search/?q=flow&i=1469609#) by [Becris](https://thenounproject.com/Becris) from [The Noun Project](https://thenounproject.com/)
+[Logo image](https://thenounproject.com/search/?q=define&i=659840#) by [Sumana Chamrunworakiat](https://thenounproject.com/windy.windysky) from [The Noun Project](https://thenounproject.com/)
 
 ## License
 

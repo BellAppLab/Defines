@@ -2,15 +2,13 @@ Pod::Spec.new do |s|
 
   s.name                = "Defines"
   s.version             = "1.0.0"
-  s.summary             = "A Swift dLog implementation."
-  s.screenshot          = "https://github.com/BellAppLab/BLLogger/raw/master/Images/defines.png"
+  s.summary             = "A collection of runtime checks written in Swift."
+  s.screenshot          = "https://github.com/BellAppLab/Defines/raw/master/Images/defines.png"
 
   s.description         = <<-DESC
-A Swift dLog implementation.
+A collection of runtime checks written in Swift.
 
-To be quite honest, this is so simple that it's probably easier to just copy and paste the code directly into your project, instead of adding yet another dependency to it.
-
-You can find the gist [here](https://gist.github.com/BellAppLab/cf99a9943f8a13df616e24e4e3b6e640).
+Simply check if `Defines.Device.isSimulator` and get on with your life.
                    DESC
 
   s.homepage            = "https://github.com/BellAppLab/Defines"
