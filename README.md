@@ -1,4 +1,12 @@
-# Defines
+# Defines [![Version](https://img.shields.io/badge/Version-1.0-black.svg?style=flat)](#installation) [![License](https://img.shields.io/cocoapods/l/Defines.svg?style=flat)](#license)
+
+[![Platforms](https://img.shields.io/badge/Platforms-iOS|watchOS|tvOS|macOS-brightgreen.svg?style=flat)](#installation)
+[![Swift support](https://img.shields.io/badge/Swift-3.3%20%7C%204.1-red.svg?style=flat)](#swift-versions-support)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Defines.svg?style=flat&label=CocoaPods)](https://cocoapods.org/pods/Defines)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Twitter](https://img.shields.io/badge/Twitter-@BellAppLab-blue.svg?style=flat)](http://twitter.com/BellAppLab)
+
+![Defines](./Images/defines.png)
 
 A small collection of Swift structs to replace #define statements in Obj-C.
 
@@ -12,41 +20,58 @@ if Defines.Device.isSimulator {
 }
 ```
 
-## Requirements
+## Specs
 
-* iOS 8+
-* Swift 3.0
+* iOS 9+
+* watchOS 3+
+* tvOS 9+
+* macOS 10.11+
+* Swift 3.3+
 
 ## Installation
 
 ### Cocoapods
 
-Because of [this](http://stackoverflow.com/questions/39637123/cocoapods-app-xcworkspace-does-not-exists), I've dropped support for Cocoapods on this repo. I cannot have production code rely on a dependency manager that breaks this badly. 
+```ruby
+pod 'Defines', '~> 1.0'
+```
+
+Then `import Defines` where needed.
+
+### Carthage
+
+```swift
+github "BellAppLab/Defines" ~> 1.0
+```
+
+Then `import Defines` where needed.
+
+### Swift Package Manager
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/BellAppLab/Defines", from: "1.0")
+]
+```
+
+Then `import Defines` where needed.
 
 ### Git Submodules
 
-**Why submodules, you ask?**
-
-Following [this thread](http://stackoverflow.com/questions/31080284/adding-several-pods-increases-ios-app-launch-time-by-10-seconds#31573908) and other similar to it, and given that Cocoapods only works with Swift by adding the use_frameworks! directive, there's a strong case for not bloating the app up with too many frameworks. Although git submodules are a bit trickier to work with, the burden of adding dependencies should weigh on the developer, not on the user. :wink:
-
-To install Defines using git submodules:
-
-```
+```shell
 cd toYourProjectsFolder
-git submodule add --name Defines https://github.com/BellAppLab/Defines.git
+git submodule add -b submodule --name Defines https://github.com/BellAppLab/Defines.git
 ```
 
-**Swift 2 support**
-
-```
-git submodule add -b swift2 --name Defines https://github.com/BellAppLab/Defines.git
-```
-
-Then, navigate to the new Defines folder and drag the `Source` folder into your Xcode project.
+Then drag the `Definess` folder into your Xcode project.
 
 ## Author
 
 Bell App Lab, apps@bellapplab.com
+
+### Credits
+
+[Logo image](https://thenounproject.com/search/?q=flow&i=1469609#) by [Becris](https://thenounproject.com/Becris) from [The Noun Project](https://thenounproject.com/)
 
 ## License
 
