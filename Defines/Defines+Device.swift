@@ -101,10 +101,18 @@ public extension Defines.Device
      Returns true if your app is running on iOS, watchOS or tvOS and on `i386` or `x86_64` architectures. Otherwise, false.
      */
     public static let isSimulator: Bool = {
+        #if swift(>=4.1)
+        #if targetEnvironment(simulator)
+        return true
+        #else
+        return false
+        #endif
+        #else
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
         return true
         #else
         return false
+        #endif
         #endif
     }()
 }
