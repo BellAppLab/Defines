@@ -295,7 +295,7 @@
 		650F753B20FBDC13000AD6BD /* ScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTests.swift; sourceTree = "<group>"; };
 		650F754020FBDC37000AD6BD /* Aux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aux.swift; sourceTree = "<group>"; };
 		650F754520FBF9FF000AD6BD /* FeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTests.swift; sourceTree = "<group>"; };
-		650F755720FC0375000AD6BD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		65D3754620FCD0F200F701FB /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,7 +380,7 @@
 			children = (
 				650F73CC20FA03E6000AD6BD /* README.md */,
 				650F73CE20FA0402000AD6BD /* Defines.podspec */,
-				650F755720FC0375000AD6BD /* Package.swift */,
+				65D3754620FCD0F200F701FB /* Package.swift */,
 				650F73CD20FA03E6000AD6BD /* LICENSE */,
 				650F73C920FA03DC000AD6BD /* Sources */,
 				650F73F820FA096E000AD6BD /* Headers */,
@@ -1276,7 +1276,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VERSION = 1.0;
+				VERSION = 1.0.1;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
@@ -1336,7 +1336,7 @@
 				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
-				VERSION = 1.0;
+				VERSION = 1.0.1;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
