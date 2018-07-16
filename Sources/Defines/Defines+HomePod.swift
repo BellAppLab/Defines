@@ -23,8 +23,12 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the model is a HomePod.
+     */
     public var isHomePod: Bool {
         switch self {
         case .homePod_1,
@@ -37,9 +41,13 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if the model is a HomePod.
+     */
     public static let isHomePod: Bool = {
-        return Defines.Device.model.isHomePod
+        return Defines.Device.currentModel.isHomePod
     }()
 }

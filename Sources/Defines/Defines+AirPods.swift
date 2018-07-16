@@ -23,8 +23,12 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the model is an AirPod.
+     */
     public var isAirPods: Bool {
         switch self {
         case .airPods: return true
@@ -34,9 +38,13 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if the model is an AirPod.
+     */
     public static let isAirPods: Bool = {
-        return Defines.Device.model.isAirPods
+        return Defines.Device.currentModel.isAirPods
     }()
 }

@@ -23,8 +23,12 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the model is an Watch.
+     */
     public var isAppleWatch: Bool {
         switch self {
         case .appleWatch_1stGeneration_38mm,
@@ -45,9 +49,13 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if the model is an Watch.
+     */
     public static let isAppleWatch: Bool = {
-        return Defines.Device.model.isAppleWatch
+        return Defines.Device.currentModel.isAppleWatch
     }()
 }

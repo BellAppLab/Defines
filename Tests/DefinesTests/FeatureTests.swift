@@ -60,7 +60,7 @@ class FeatureTests: XCTestCase
                  .iMac_21_5_Inch_2011,
                  .iMac_27_Inch_2011:
                 year = 2011
-            case .appleTV_3rdGeneration_1,
+            case .appleTV_3rdGeneration,
                  .iPad_3rdGeneration,
                  .iPad_3rdGeneration_Verizon,
                  .iPad_3rdGeneration_GSM,

@@ -8,7 +8,13 @@ Pod::Spec.new do |s|
   s.description         = <<-DESC
 A collection of runtime checks written in Swift.
 
-Simply check if `Defines.Device.isSimulator` and get on with your life.
+We all know the Apple Way of Doing Things ™, right? Instead of checking for a device, you check for a capability. For instance, instead of checking if a device is an iPod touch and therefore doesn't have a GPS, you check if `CoreLocation` is available. Or instead of checking for a device's screen size all the time, we should rely on Auto Layout's size classes and all that.
+
+I get it.
+
+But sometimes you just have to have that flag somewhere. `Compact` and `Regular` do not capture how preposterous the iPad Pro 12.9" screen's real estate is. So maybe you want to present a little bit more content there. Or maybe you just don't want to ask permissions for push notifications on the Simulator. We've all been there.
+
+So just `import Defines` and get on with your life.
                    DESC
 
   s.homepage            = "https://github.com/BellAppLab/Defines"

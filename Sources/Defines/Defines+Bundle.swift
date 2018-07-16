@@ -23,9 +23,24 @@
 import Foundation
 
 
+//MARK: - Main
 @nonobjc
 public extension Bundle
 {
+    /**
+     Returns the bundle identifier for a `Bundle` retrieved using `Bundle(for: class)`.
+
+     Example:
+
+     ```
+     if let id = Bundle.id(forClass: AppDelegate.self) {
+        print(id) //prints 'com.example.your-app-id'
+     }
+     ```
+
+     - parameters:
+         - aClass:  The class to be used to retrieve a bundle using `Bundle(for: class)`.
+     */
     static func id(forClass aClass: AnyClass) -> String? {
         return Bundle(for: aClass).bundleIdentifier
     }

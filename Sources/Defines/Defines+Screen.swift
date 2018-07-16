@@ -31,29 +31,26 @@ import AppKit
 #endif
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the device doesn't have a screen (eg. AirPods and HomePods).
+     */
     public var noScreen: Bool {
         switch self {
         case .airPods,
              .homePod_1,
-             .homePod_2,
-             .macMini_2009,
-             .macMini_2010,
-             .macMini_2011,
-             .macMini_2011_2,
-             .macMini_2012,
-             .macMini_2012_2,
-             .macMini_2014,
-             .macPro_2009,
-             .macPro_2010,
-             .macPro_2013:
+             .homePod_2:
             return true
         default:
             return false
         }
     }
 
+    /**
+     Returns true if the device has a 38mm screen (eg. Watch 38mm).
+     */
     public var is_38_mm: Bool {
         switch self {
         case .appleWatch_1stGeneration_38mm,
@@ -67,6 +64,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 42mm screen (eg. Watch 42mm).
+     */
     public var is_42_mm: Bool {
         switch self {
         case .appleWatch_1stGeneration_42mm,
@@ -80,6 +80,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 3.5" screen (eg. iPhone 4s).
+     */
     public var is_3_5_Inch: Bool {
         switch self {
         case .iPhone4s:
@@ -89,6 +92,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 4" screen (eg. iPhone 5c, iPhone 5, iPhone 5s, iPhone SE and iPod touch).
+     */
     public var is_4_Inch: Bool {
         if isiPhoneC {
             return true
@@ -110,6 +116,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 4.7" screen (eg. iPhone 6, iPhone 6s, iPhone 7 and iPhone 8).
+     */
     public var is_4_7_Inch: Bool {
         switch self {
         case .iPhone6,
@@ -124,22 +133,37 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 5.5" screen (eg. iPhone Plus).
+     */
     public var is_5_5_Inch: Bool {
         return isiPhonePlus
     }
 
+    /**
+     Returns true if the device has a 5.8" screen (eg. iPhone X).
+     */
     public var is_5_8_Inch: Bool {
         return isiPhoneX
     }
 
+    /**
+     Returns true if the device has a 7.9" screen (eg. iPad mini).
+     */
     public var is_7_9_Inch: Bool {
         return isiPadMini
     }
 
+    /**
+     Returns true if the device has a 9.7" screen (eg. regular iPad).
+     */
     public var is_9_7_Inch: Bool {
         return isiPadRegular
     }
 
+    /**
+     Returns true if the device has a 10.5" screen (eg. iPad Pro).
+     */
     public var is_10_5_Inch: Bool {
         switch self {
         case .iPadPro_10_5_Inch,
@@ -150,6 +174,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has an 11" screen (eg. MacBook air).
+     */
     public var is_11_Inch: Bool {
         switch self {
         case .macBookAir_11_Inch_2010,
@@ -163,6 +190,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 12" screen (eg. MacBook).
+     */
     public var is_12_Inch: Bool {
         switch self {
         case .macBook_2015,
@@ -174,6 +204,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 12.9" screen (eg. iPad Pro).
+     */
     public var is_12_9_Inch: Bool {
         switch self {
         case .iPadPro_12_9_Inch,
@@ -186,6 +219,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 13" screen (eg. MacBook air, MacBook, MacBook Pro).
+     */
     public var is_13_Inch: Bool {
         switch self {
         case .macBookAir_2009,
@@ -215,6 +251,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 15" screen (eg. MacBook Pro).
+     */
     public var is_15_Inch: Bool {
         switch self {
         case .macBookPro_Late_2008,
@@ -236,6 +275,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 17" screen (eg. MacBook Pro).
+     */
     public var is_17_Inch: Bool {
         switch self {
         case .macBookPro_17_Inch_2009,
@@ -247,6 +289,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 21.5" screen (eg. iMac).
+     */
     public var is_21_5_Inch: Bool {
         switch self {
         case .iMac_21_5_Inch_2010,
@@ -264,6 +309,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device has a 27" screen (eg. iMac).
+     */
     public var is_27_Inch: Bool {
         switch self {
         case .iMac_27_Inch_2010,
@@ -279,6 +327,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device supports 4K screens (eg. TV and iMac).
+     */
     public var is_4K: Bool {
         switch self {
         case .appleTV_4K,
@@ -290,6 +341,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device supports 5K screens (eg. iMac).
+     */
     public var is_5K: Bool {
         switch self {
         case .iMac_27_Inch_5K_2014,
@@ -301,16 +355,35 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the device doesn't have a typical screen size (eg. TV, Mac Mini and Mac Pro).
+
+     - note:
+        It is not possible to determine the screen size of the MacBook Pro (Early 2008), the iMac (Early 2009) and the iMac (Late 2009), since the same model identifier is used for multiple devices.
+
+     ## See Also
+     - `Defines.Screen`
+     */
     public var undefinedScreen: Bool {
         switch self {
         case .appleTV_2ndGeneration,
-             .appleTV_3rdGeneration_1,
+             .appleTV_3rdGeneration,
              .appleTV_3rdGeneration_2,
              .appleTV_4thGeneration,
              .appleTV_4K,
              .macBookPro_Early_2008,
+             .macMini_2009,
+             .macMini_2010,
+             .macMini_2011,
+             .macMini_2011_2,
+             .macMini_2012,
+             .macMini_2012_2,
+             .macMini_2014,
              .iMac_Early_2009,
-             .iMac_Late_2009:
+             .iMac_Late_2009,
+             .macPro_2009,
+             .macPro_2010,
+             .macPro_2013:
             return true
         default:
             return false
@@ -319,9 +392,18 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Screen
 {
-    public static let bounds: CGRect = {
+    #if os(iOS) || os(tvOS) || os(watchOS)
+    public typealias Rect = CGRect
+    #endif
+    #if os(macOS)
+    public typealias Rect = NSRect
+    #endif
+
+    /// The main screen's current bounds.
+    public static let bounds: Rect = {
         #if os(iOS) || os(tvOS)
         return UIScreen.main.bounds
         #endif
@@ -357,6 +439,7 @@ public extension Defines.Screen
         return min(Defines.Screen.currentWidth, Defines.Screen.currentHeight)
     }()
 
+    /// The main screen's scale factor (aka `UIScreen.main.scale`)
     public static let scale: CGFloat = {
         #if os(iOS) || os(tvOS)
         return UIScreen.main.scale
@@ -388,91 +471,163 @@ public extension Defines.Screen
         #endif
     }()
 
+    /**
+     Returns true if the device doesn't have a screen (eg. AirPods and HomePods).
+     */
     public static let noScreen: Bool = {
-        return Defines.Device.model.noScreen
+        return Defines.Device.currentModel.noScreen
     }()
 
+    /**
+     Returns true if the device has a 38mm screen (eg. Watch 38mm).
+     */
     public static let is_38_mm: Bool = {
-        return Defines.Device.model.is_38_mm
+        return Defines.Device.currentModel.is_38_mm
     }()
 
+    /**
+     Returns true if the device has a 42mm screen (eg. Watch 42mm).
+     */
     public static let is_42_mm: Bool = {
-        return Defines.Device.model.is_42_mm
+        return Defines.Device.currentModel.is_42_mm
     }()
 
+    /**
+     Returns true if the device has a 3.5" screen (eg. iPhone 4s).
+     */
     public static let is_3_5_Inch: Bool = {
-        return Defines.Device.model.is_3_5_Inch
+        return Defines.Device.currentModel.is_3_5_Inch
     }()
 
+    /**
+     Returns true if the device has a 4" screen (eg. iPhone 5c, iPhone 5, iPhone 5s, iPhone SE and iPod touch).
+     */
     public static let is_4_Inch: Bool = {
-        return Defines.Device.model.is_4_Inch
+        return Defines.Device.currentModel.is_4_Inch
     }()
 
+    /**
+     Returns true if the device has a 4.7" screen (eg. iPhone 6, iPhone 6s, iPhone 7 and iPhone 8).
+     */
     public static let is_4_7_Inch: Bool = {
-        return Defines.Device.model.is_4_7_Inch
+        return Defines.Device.currentModel.is_4_7_Inch
     }()
 
+    /**
+     Returns true if the device has a 5.5" screen (eg. iPhone Plus).
+     */
     public static let is_5_5_Inch: Bool = {
-        return Defines.Device.model.is_5_5_Inch
+        return Defines.Device.currentModel.is_5_5_Inch
     }()
 
+    /**
+     Returns true if the device has a 5.8" screen (eg. iPhone X).
+     */
     public static let is_5_8_Inch: Bool = {
-        return Defines.Device.model.is_5_8_Inch
+        return Defines.Device.currentModel.is_5_8_Inch
     }()
 
+    /**
+     Returns true if the device has a 7.9" screen (eg. iPad mini).
+     */
     public static let is_7_9_Inch: Bool = {
-        return Defines.Device.model.is_7_9_Inch
+        return Defines.Device.currentModel.is_7_9_Inch
     }()
 
+    /**
+     Returns true if the device has a 9.7" screen (eg. regular iPad).
+     */
     public static let is_9_7_Inch: Bool = {
-        return Defines.Device.model.is_9_7_Inch
+        return Defines.Device.currentModel.is_9_7_Inch
     }()
 
+    /**
+     Returns true if the device has a 10.5" screen (eg. iPad Pro).
+     */
     public static let is_10_5_Inch: Bool = {
-        return Defines.Device.model.is_10_5_Inch
+        return Defines.Device.currentModel.is_10_5_Inch
     }()
 
+    /**
+     Returns true if the device has an 11" screen (eg. MacBook air).
+     */
     public static let is_11_Inch: Bool = {
-        return Defines.Device.model.is_11_Inch
+        return Defines.Device.currentModel.is_11_Inch
     }()
 
+    /**
+     Returns true if the device has a 12" screen (eg. MacBook).
+     */
     public static let is_12_Inch: Bool = {
-        return Defines.Device.model.is_12_Inch
+        return Defines.Device.currentModel.is_12_Inch
     }()
 
+    /**
+     Returns true if the device has a 12.9" screen (eg. iPad Pro).
+     */
     public static let is_12_9_Inch: Bool = {
-        return Defines.Device.model.is_12_9_Inch
+        return Defines.Device.currentModel.is_12_9_Inch
     }()
 
+    /**
+     Returns true if the device has a 13" screen (eg. MacBook air, MacBook, MacBook Pro).
+     */
     public static let is_13_Inch: Bool = {
-        return Defines.Device.model.is_13_Inch
+        return Defines.Device.currentModel.is_13_Inch
     }()
 
+    /**
+     Returns true if the device has a 15" screen (eg. MacBook Pro).
+     */
     public static let is_15_Inch: Bool = {
-        return Defines.Device.model.is_15_Inch
+        return Defines.Device.currentModel.is_15_Inch
     }()
 
+    /**
+     Returns true if the device has a 17" screen (eg. MacBook Pro).
+     */
     public static let is_17_Inch: Bool = {
-        return Defines.Device.model.is_17_Inch
+        return Defines.Device.currentModel.is_17_Inch
     }()
 
+    /**
+     Returns true if the device has a 21.5" screen (eg. iMac).
+     */
     public static let is_21_5_Inch: Bool = {
-        return Defines.Device.model.is_21_5_Inch
+        return Defines.Device.currentModel.is_21_5_Inch
     }()
 
+    /**
+     Returns true if the device has a 27" screen (eg. iMac).
+     */
     public static let is_27_Inch: Bool = {
-        return Defines.Device.model.is_27_Inch
+        return Defines.Device.currentModel.is_27_Inch
     }()
 
+    /**
+     Returns true if the device supports 4K screens (eg. TV and iMac).
+     */
     public static let is_4K: Bool = {
-        return Defines.Device.model.is_4K
+        return Defines.Device.currentModel.is_4K
     }()
 
+    /**
+     Returns true if the device supports 5K screens (eg. iMac).
+     */
     public static let is_5K: Bool = {
-        return Defines.Device.model.is_5K
+        return Defines.Device.currentModel.is_5K
     }()
 
+    /**
+     Returns true if the device doesn't have a typical screen size (eg. TV, Mac Mini and Mac Pro).
+
+     - note:
+     It is not possible to determine the screen size of the MacBook Pro (Early 2008), the iMac (Early 2009) and the iMac (Late 2009), since the same model identifier is used for multiple devices.
+
+     ## See Also
+     - `Defines.Screen`
+     */
     public static let undefinedScreen: Bool = {
-        return Defines.Device.model.undefinedScreen
+        return Defines.Device.currentModel.undefinedScreen
     }()
 }

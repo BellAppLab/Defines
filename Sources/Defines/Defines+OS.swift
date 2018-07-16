@@ -31,8 +31,10 @@ import AppKit
 #endif
 
 
+//MARK: - Main
 public extension Defines.OS
 {
+    /// The version of the OS currently running your app (aka `UIDevice.current.systemVersion`)
     public static let version: Defines.Version = {
         #if os(iOS) || os(tvOS)
         return Defines.Version(versionString: UIDevice.current.systemVersion)
@@ -45,6 +47,7 @@ public extension Defines.OS
         #endif
     }()
 
+    /// Returns true when running on iOS.
     public static let isiOS: Bool = {
         #if os(iOS)
         return true
@@ -53,6 +56,7 @@ public extension Defines.OS
         #endif
     }()
 
+    /// Returns true when running on watchOS.
     public static let isWatchOS: Bool = {
         #if os(watchOS)
         return true
@@ -61,6 +65,7 @@ public extension Defines.OS
         #endif
     }()
 
+    /// Returns true when running on tvOS.
     public static let istvOS: Bool = {
         #if os(tvOS)
         return true
@@ -69,6 +74,7 @@ public extension Defines.OS
         #endif
     }()
 
+    /// Returns true when running on macOS.
     public static let isMacOS: Bool = {
         #if os(macOS)
         return true

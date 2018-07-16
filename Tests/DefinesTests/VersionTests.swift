@@ -19,14 +19,14 @@ class VersionTests: XCTestCase
         XCTAssertTrue(version.minor == 2, "The version minor number should be '2'")
         XCTAssertTrue(version.patch == 3, "The version patch number should be '3'")
         XCTAssertTrue(version.build == "a", "The version build should be 'a'")
-        XCTAssertTrue(version.description == "App Version: 1.2.3 (a)", "The version description should be 'App Version: 1.2.3 (a)'")
+        XCTAssertTrue(version.description == "Version: 1.2.3 (a)", "The version description should be 'App Version: 1.2.3 (a)'")
 
         version = Defines.Version(major: -1, minor: -2, patch: -3)
         XCTAssertTrue(version.major == 0, "The version major number should be '0'")
         XCTAssertTrue(version.minor == 0, "The version minor number should be '0'")
         XCTAssertTrue(version.patch == 0, "The version patch number should be '0'")
         XCTAssertTrue(version.build == "", "The version build should be an empty string")
-        XCTAssertTrue(version.description == "App Version: 0.0.0 ()", "The version description should be 'App App Version: 0.0.0 ()'")
+        XCTAssertTrue(version.description == "Version: 0.0.0 ()", "The version description should be 'App App Version: 0.0.0 ()'")
     }
 
     func testVersionForCurrentApp() {

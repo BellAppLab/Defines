@@ -21,6 +21,7 @@
 import Foundation
 
 
+//MARK: - Aux
 private struct Sysctl {
     /// Access the raw data for an array of sysctl identifiers.
     static func dataForKeys(_ keys: [Int32]) -> [Int8] {
@@ -86,12 +87,19 @@ private struct Sysctl {
  THE SOFTWARE.
  */
 
+//MARK: - Main
 public extension Defines.Device
 {
-    public static let model: Defines.Device.Model = {
+    /**
+     The `Defines.Device.Model` currently running your app.
+     */
+    public static let currentModel: Defines.Device.Model = {
         return Defines.Device.Model(rawValue: Sysctl.model)!
     }()
 
+    /**
+     Returns true if your app is running on iOS, watchOS or tvOS and on `i386` or `x86_64` architectures. Otherwise, false.
+     */
     public static let isSimulator: Bool = {
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
         return true

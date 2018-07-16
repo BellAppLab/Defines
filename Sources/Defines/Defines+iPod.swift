@@ -23,8 +23,12 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the model is an iPod touch.
+     */
     public var isiPodTouch: Bool {
         switch self {
         case .iPodTouch_5thGeneration,
@@ -37,9 +41,13 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if the model is an iPod touch.
+     */
     public static let isiPodTouch: Bool = {
-        return Defines.Device.model.isiPodTouch
+        return Defines.Device.currentModel.isiPodTouch
     }()
 }

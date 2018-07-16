@@ -449,9 +449,9 @@
 				650F750520FB965E000AD6BD /* Defines+iMac.swift */,
 				650F751420FBA9DA000AD6BD /* Defines+MacPro.swift */,
 				650F74BE20FB86AF000AD6BD /* Defines+OS.swift */,
-				650F74B220FB8411000AD6BD /* Defines+Bundle.swift */,
 				650F74BA20FB85A7000AD6BD /* Defines+App.swift */,
 				650F74B620FB8461000AD6BD /* Defines+Version.swift */,
+				650F74B220FB8411000AD6BD /* Defines+Bundle.swift */,
 			);
 			path = Defines;
 			sourceTree = "<group>";

@@ -21,7 +21,7 @@ class ModelTests: XCTestCase
             .unknown,
             .airPods,
             .appleTV_2ndGeneration,
-            .appleTV_3rdGeneration_1,
+            .appleTV_3rdGeneration,
             .appleTV_3rdGeneration_2,
             .appleTV_4thGeneration,
             .appleTV_4K,

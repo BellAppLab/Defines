@@ -23,8 +23,11 @@
 import Foundation
 
 
+//MARK: - Main
 public extension Defines.Version
 {
+    //MARK: - Private
+    /// Creates a new Version by converting strings into integers.
     private init(major: String = "",
                  minor: String = "",
                  patch: String = "",
@@ -36,6 +39,21 @@ public extension Defines.Version
                   build: build ?? "")
     }
 
+    //MARK: - Public
+    /**
+     Creates a new Version by parsing a versionString and a buildString.
+
+     Example:
+
+     ```
+     let version = Defines.Version(versionString: "1.0.0", buildString: "3")
+     print(version) //prints 'Version: 1.0.0 (3)'
+     ```
+
+     - parameters:
+         - versionString:   a string representing a version, in the format **major**.**minor**.**patch**. Defaults to 0 if the string is malformed.
+         - buildString:     a string representing a build. Any string is accepted. Defaults to an empty string.
+     */
     public init(versionString: String,
                 buildString: String? = nil)
     {
@@ -55,6 +73,19 @@ public extension Defines.Version
     }
 
     #if os(macOS)
+    /**
+     Creates a new Version by parsing an instance of `OperatingSystemVersion`.
+
+     Example:
+
+     ```
+     let version = Defines.Version(operatingSystemVersion: aVersion)
+     print(version) //prints 'Version: 1.0.0 (3)'
+     ```
+
+     - parameters:
+         - operatingSystemVersion:   an instance of `OperatingSystemVersion`.
+     */
     public init(operatingSystemVersion: OperatingSystemVersion)
     {
         self.init(major: operatingSystemVersion.majorVersion,
@@ -65,8 +96,10 @@ public extension Defines.Version
 }
 
 
+//MARK: - Equatable, Comparable, CustomStringConvertible
 public extension Defines.Version
 {
+    /// Returns true if two `Version`s are equal.
     public static func == (lhs: Defines.Version,
                            rhs: Defines.Version) -> Bool
     {
@@ -77,6 +110,7 @@ public extension Defines.Version
         return true
     }
 
+    /// Returns true if the left-side operand is lesser than the right-side.
     public static func < (lhs: Defines.Version,
                           rhs: Defines.Version) -> Bool
     {
@@ -102,7 +136,8 @@ public extension Defines.Version
         return lhs.build < rhs.build
     }
 
+    /// Describes a `Version`.
     public var description: String {
-        return "App Version: \(major).\(minor).\(patch) (\(build))"
+        return "Version: \(major).\(minor).\(patch) (\(build))"
     }
 }

@@ -23,8 +23,12 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the model is an iPhone.
+     */
     public var isiPhone: Bool {
         switch self {
         case .iPhone4s,
@@ -55,6 +59,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model is an iPhone S (eg. iPhone 4s, iPhone 5s and iPhone 6s).
+     */
     public var isiPhoneS: Bool {
         switch self {
         case .iPhone4s,
@@ -68,6 +75,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model is an iPhone C (eg. iPhone 5c).
+     */
     public var isiPhoneC: Bool {
         switch self {
         case .iPhone5c_NorthAmerica_Japan,
@@ -78,6 +88,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model is an iPhone Plus (eg. iPhone 6 Plus, iPhone 7 Plus and iPhone 8 Plus).
+     */
     public var isiPhonePlus: Bool {
         switch self {
         case .iPhone6Plus,
@@ -92,6 +105,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model is an iPhone SE (eg. iPhone SE).
+     */
     public var isiPhoneSE: Bool {
         switch self {
         case .iPhoneSE:
@@ -101,6 +117,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model is an iPhone X (eg. iPhone X).
+     */
     public var isiPhoneX: Bool {
         switch self {
         case .iPhoneX,
@@ -113,29 +132,48 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if the model is an iPhone.
+     */
     public static let isiPhone: Bool = {
-        return Defines.Device.model.isiPhone
+        return Defines.Device.currentModel.isiPhone
     }()
 
+    /**
+     Returns true if the model is an iPhone S (eg. iPhone 4s, iPhone 5s and iPhone 6s).
+     */
     public static let isiPhoneS: Bool = {
-        return Defines.Device.model.isiPhoneS
+        return Defines.Device.currentModel.isiPhoneS
     }()
 
+    /**
+     Returns true if the model is an iPhone C (eg. iPhone 5c).
+     */
     public static let isiPhoneC: Bool = {
-        return Defines.Device.model.isiPhoneC
+        return Defines.Device.currentModel.isiPhoneC
     }()
 
+    /**
+     Returns true if the model is an iPhone Plus (eg. iPhone 6 Plus, iPhone 7 Plus and iPhone 8 Plus).
+     */
     public static let isiPhonePlus: Bool = {
-        return Defines.Device.model.isiPhonePlus
+        return Defines.Device.currentModel.isiPhonePlus
     }()
 
+    /**
+     Returns true if the model is an iPhone SE (eg. iPhone SE).
+     */
     public static let isiPhoneSE: Bool = {
-        return Defines.Device.model.isiPhoneSE
+        return Defines.Device.currentModel.isiPhoneSE
     }()
 
+    /**
+     Returns true if the model is an iPhone X (eg. iPhone X).
+     */
     public static let isiPhoneX: Bool = {
-        return Defines.Device.model.isiPhoneX
+        return Defines.Device.currentModel.isiPhoneX
     }()
 }

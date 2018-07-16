@@ -23,8 +23,12 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if no model identifier has been retrieved for the device running your app.
+     */
     public var isUnknown: Bool {
         switch self {
         case .unknown: return true
@@ -34,9 +38,13 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if no model identifier has been retrieved for the device running your app.
+     */
     public static let isUnknown: Bool = {
-        return Defines.Device.model.isUnknown
+        return Defines.Device.currentModel.isUnknown
     }()
 }

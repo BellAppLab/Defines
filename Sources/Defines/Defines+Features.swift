@@ -23,8 +23,12 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns the year the model has been first released in.
+     */
     public var year: Int {
         switch self {
         case .unknown:
@@ -70,7 +74,7 @@ public extension Defines.Device.Model
              .iMac_21_5_Inch_2011,
              .iMac_27_Inch_2011:
             return 2011
-        case .appleTV_3rdGeneration_1,
+        case .appleTV_3rdGeneration,
              .iPad_3rdGeneration,
              .iPad_3rdGeneration_Verizon,
              .iPad_3rdGeneration_GSM,
@@ -197,6 +201,14 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model has GPS capabilities.
+
+     - warning:
+        Do **not** rely on this flag to execute code that requires the GPS to be present. Use `CoreLocation` to do that.
+
+        This flag is only here because some devices' names encode the presence of a GPS and we thought it'd be useful to translate that into a boolean. That's all.
+     */
     public var hasGPS: Bool {
         switch self {
         case .appleWatchSeries3_38mm_GPS,
@@ -255,6 +267,14 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model has Celluar capabilities.
+
+     - warning:
+     Do **not** rely on this flag to execute code that requires a cellular network to be present.
+
+     This flag is only here because some devices' names encode the presence of a cellular module and we thought it'd be useful to translate that into a boolean. That's all.
+     */
     public var hasCellular: Bool {
         switch self {
         case .appleWatchSeries3_38mm_GPS_Cellular,
@@ -313,17 +333,37 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns the year the model has been first released in.
+     */
     public static let year: Int = {
-        return Defines.Device.model.year
+        return Defines.Device.currentModel.year
     }()
 
+    /**
+     Returns true if the model has GPS capabilities.
+
+     - warning:
+     Do **not** rely on this flag to execute code that requires the GPS to be present. Use `CoreLocation` to do that.
+
+     This flag is only here because some devices' names encode the presence of a GPS and we thought it'd be useful to translate that into a boolean. That's all.
+     */
     public static let hasGPS: Bool = {
-        return Defines.Device.model.hasGPS
+        return Defines.Device.currentModel.hasGPS
     }()
 
+    /**
+     Returns true if the model has Celluar capabilities.
+
+     - warning:
+     Do **not** rely on this flag to execute code that requires a cellular network to be present.
+
+     This flag is only here because some devices' names encode the presence of a cellular module and we thought it'd be useful to translate that into a boolean. That's all.
+     */
     public static let hasCellular: Bool = {
-        return Defines.Device.model.hasCellular
+        return Defines.Device.currentModel.hasCellular
     }()
 }

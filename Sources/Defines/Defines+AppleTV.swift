@@ -23,12 +23,16 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the model is an TV.
+     */
     public var isAppleTV: Bool {
         switch self {
         case .appleTV_2ndGeneration,
-             .appleTV_3rdGeneration_1,
+             .appleTV_3rdGeneration,
              .appleTV_3rdGeneration_2,
              .appleTV_4thGeneration,
              .appleTV_4K:
@@ -40,9 +44,13 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if the model is an TV.
+     */
     public static let isAppleTV: Bool = {
-        return Defines.Device.model.isAppleTV
+        return Defines.Device.currentModel.isAppleTV
     }()
 }

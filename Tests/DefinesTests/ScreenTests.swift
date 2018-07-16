@@ -23,17 +23,7 @@ class ScreenTests: XCTestCase
             switch $0 {
             case .airPods,
                  .homePod_1,
-                 .homePod_2,
-                 .macMini_2009,
-                 .macMini_2010,
-                 .macMini_2011,
-                 .macMini_2011_2,
-                 .macMini_2012,
-                 .macMini_2012_2,
-                 .macMini_2014,
-                 .macPro_2009,
-                 .macPro_2010,
-                 .macPro_2013:
+                 .homePod_2:
                 return $0
             default:
                 return nil
@@ -480,13 +470,23 @@ class ScreenTests: XCTestCase
             guard $0.rawValue.contains(modelNames) else { return nil }
             switch $0 {
             case .appleTV_2ndGeneration,
-                 .appleTV_3rdGeneration_1,
+                 .appleTV_3rdGeneration,
                  .appleTV_3rdGeneration_2,
                  .appleTV_4thGeneration,
                  .appleTV_4K,
                  .macBookPro_Early_2008,
+                 .macMini_2009,
+                 .macMini_2010,
+                 .macMini_2011,
+                 .macMini_2011_2,
+                 .macMini_2012,
+                 .macMini_2012_2,
+                 .macMini_2014,
                  .iMac_Early_2009,
-                 .iMac_Late_2009:
+                 .iMac_Late_2009,
+                 .macPro_2009,
+                 .macPro_2010,
+                 .macPro_2013:
                 return $0
             default:
                 return nil

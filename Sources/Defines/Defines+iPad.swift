@@ -23,8 +23,12 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the model is an iPad.
+     */
     public var isiPad: Bool {
         switch self {
         case .iPad_2,
@@ -71,6 +75,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model is a regular iPad (eg. iPad 2, iPad (3rd Generation), iPad (4th Generation), iPad air, iPad air 2, iPad Pro 9.7", iPad (5th Generation) and iPad (6th Generation)).
+     */
     public var isiPadRegular: Bool {
         switch self {
         case .iPad_2,
@@ -100,6 +107,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model is an iPad air (eg. iPad air and iPad air 2).
+     */
     public var isiPadAir: Bool {
         switch self {
         case .iPadAir,
@@ -113,6 +123,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model is an iPad Pro (eg. iPad Pro 9.7", iPad Pro 10.5" and iPad Pro 12.9").
+     */
     public var isiPadPro: Bool {
         switch self {
         case .iPadPro_12_9_Inch,
@@ -129,6 +142,9 @@ public extension Defines.Device.Model
         }
     }
 
+    /**
+     Returns true if the model is an iPad mini (eg. iPad mini, iPad mini 2, iPad mini 3 and iPad mini 4).
+     */
     public var isiPadMini: Bool {
         switch self {
         case .iPad_Mini,
@@ -150,25 +166,41 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if the model is an iPad.
+     */
     public static let isiPad: Bool = {
-        return Defines.Device.model.isiPad
+        return Defines.Device.currentModel.isiPad
     }()
 
+    /**
+     Returns true if the model is a regular iPad (eg. iPad 2, iPad (3rd Generation), iPad (4th Generation), iPad air, iPad air 2, iPad Pro 9.7", iPad (5th Generation) and iPad (6th Generation)).
+     */
     public static let isiPadRegular: Bool = {
-        return Defines.Device.model.isiPadRegular
+        return Defines.Device.currentModel.isiPadRegular
     }()
 
+    /**
+     Returns true if the model is an iPad air (eg. iPad air and iPad air 2).
+     */
     public static let isiPadAir: Bool = {
-        return Defines.Device.model.isiPadAir
+        return Defines.Device.currentModel.isiPadAir
     }()
 
+    /**
+     Returns true if the model is an iPad Pro (eg. iPad Pro 9.7", iPad Pro 10.5" and iPad Pro 12.9").
+     */
     public static let isiPadPro: Bool = {
-        return Defines.Device.model.isiPadPro
+        return Defines.Device.currentModel.isiPadPro
     }()
 
+    /**
+     Returns true if the model is an iPad mini (eg. iPad mini, iPad mini 2, iPad mini 3 and iPad mini 4).
+     */
     public static let isiPadMini: Bool = {
-        return Defines.Device.model.isiPadMini
+        return Defines.Device.currentModel.isiPadMini
     }()
 }

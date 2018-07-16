@@ -18,15 +18,62 @@ if Defines.Device.isSimulator {
 }
 ```
 
-And get on with your life. 
+We all know the Apple Way of Doing Things ™, right? Instead of checking for a device, you check for a capability. For instance, instead of checking if a device is an iPod touch and therefore doesn't have a GPS, you check if `CoreLocation` is available. Or instead of checking for a device's screen size all the time, we should rely on Auto Layout's size classes and all that. 
+
+I get it. 
+
+But sometimes you just have to have that flag somewhere. `Compact` and `Regular` do not capture how preposterous the iPad Pro 12.9" screen's real estate is. So maybe you want to present a little bit more content there. Or maybe you just don't want to ask permissions for push notifications on the Simulator. We've all been there.
+
+So just `import Defines` and get on with your life. 
+
+## Note
+
+Please note that `Defines` does **not** provide compile-time safety checks. It is merely a collection of static booleans for runtime checks. 
+
+In other words, doing this:
+
+```swift
+let iOS9 = Defines.Version(versionString: "9.0")
+if Defines.OS.isiOS && Defines.OS.version = iOS9 {
+    //execute code only available on iOS9
+}
+```
+
+... will **not** silence any compiler warnings. 
+
+For that, take a look at [Checking API Availability](https://docs.swift.org/swift-book/LanguageGuide/ControlFlow.html#ID523) and  [Conditional Compilation Block](https://docs.swift.org/swift-book/ReferenceManual/Statements.html#ID539).
 
 ## Usage
 
-```swift
-if Defines.Device.isSimulator {
-    //Don't ask permission to send push notifications
-}
-```
+Just so you get the gist of it.
+
+- `Defines`: main point of interaction with this module.
+    - `Device`
+        - `currentModel` : the device model running your code.
+        - `isSimulator`
+        - `Model`: enumeration of model identifiers for all the relevant Apple products since 2008.
+        - `isAppleTV`
+        - `isAppleWatch`
+        - `isiPad`
+        - `isiPhone`
+        - `isiPod`
+        - `isMac`
+        - much more
+    - `Screen`: information about the current screen available to your app.
+        - `bounds`: the screen's current bound rect.
+        - `currentWidth`
+        - `currentHeight`
+        - `maxLength`: the greater between width and height.
+        - `minLength`: the lesser between width and height.
+        - much more
+    - `OS`: information about the OS running your app.
+        - `version`: describes the version of the OS running your app and makes it easy to compare them.
+    - `App`: your app, mainly reading from Info.plist.
+        - `name(forClass:)`:  find your app's name.
+        - `version(forClass:)`: find your app's version.
+    - `Version`: defines a software version in the format **major.minor.patch (build)**.
+- `Bundle`:
+    - `id(forClass:)`: find your app's bundle id.
 
 ## Specs
 

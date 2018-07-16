@@ -23,8 +23,12 @@
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the model is a Mac Pro.
+     */
     public var isMacPro: Bool {
         switch self {
         case .macPro_2009,
@@ -38,9 +42,13 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if the model is a Mac Pro.
+     */
     public static let isMacPro: Bool = {
-        return Defines.Device.model.isMacPro
+        return Defines.Device.currentModel.isMacPro
     }()
 }

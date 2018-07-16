@@ -26,8 +26,12 @@ import UIKit
 import Foundation
 
 
+//MARK: - Instance Variables
 public extension Defines.Device.Model
 {
+    /**
+     Returns true if the app is running on CarPlay.
+     */
     public var isCar: Bool {
         #if os(iOS)
         return UIDevice.current.userInterfaceIdiom == .carPlay
@@ -38,9 +42,13 @@ public extension Defines.Device.Model
 }
 
 
+//MARK: - Static Variables
 public extension Defines.Device
 {
+    /**
+     Returns true if the app is running on CarPlay.
+     */
     public static let isCar: Bool = {
-        return Defines.Device.model.isCar
+        return Defines.Device.currentModel.isCar
     }()
 }
