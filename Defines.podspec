@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = "Defines"
-  s.version             = "1.0.1"
+  s.version             = "1.0.2"
   s.summary             = "A collection of runtime checks written in Swift."
   s.screenshot          = "https://github.com/BellAppLab/Defines/raw/master/Images/defines.png"
 
