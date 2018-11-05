@@ -65,6 +65,19 @@ public extension Defines.Device.Model
     }
 
     /**
+     Returns true if the device has a 40mm screen (eg. Watch 40mm).
+     */
+    public var is_40_mm: Bool {
+        switch self {
+        case .appleWatchSeries4_40mm_GPS,
+             .appleWatchSeries4_40mm_GPS_Cellular:
+            return true
+        default:
+            return false
+        }
+    }
+
+    /**
      Returns true if the device has a 42mm screen (eg. Watch 42mm).
      */
     public var is_42_mm: Bool {
@@ -74,6 +87,19 @@ public extension Defines.Device.Model
              .appleWatchSeries2_42mm,
              .appleWatchSeries3_42mm_GPS_Cellular,
              .appleWatchSeries3_42mm_GPS:
+            return true
+        default:
+            return false
+        }
+    }
+
+    /**
+     Returns true if the device has a 44mm screen (eg. Watch 44mm).
+     */
+    public var is_44_mm: Bool {
+        switch self {
+        case .appleWatchSeries4_44mm_GPS,
+             .appleWatchSeries4_44mm_GPS_Cellular:
             return true
         default:
             return false
@@ -144,7 +170,39 @@ public extension Defines.Device.Model
      Returns true if the device has a 5.8" screen (eg. iPhone X).
      */
     public var is_5_8_Inch: Bool {
-        return isiPhoneX
+        switch self {
+        case .iPhoneX,
+             .iPhoneX_2,
+             .iPhoneXS:
+            return true
+        default:
+            return false
+        }
+    }
+
+    /**
+     Returns true if the device has a 6.1" screen (eg. iPhone XR).
+     */
+    public var is_6_1_Inch: Bool {
+        switch self {
+        case .iPhoneXR:
+            return true
+        default:
+            return false
+        }
+    }
+
+    /**
+     Returns true if the device has a 6.5" screen (eg. iPhone XS Max).
+     */
+    public var is_6_5_Inch: Bool {
+        switch self {
+        case .iPhoneXS_Max,
+             .iPhoneXS_Max_China:
+            return true
+        default:
+            return false
+        }
     }
 
     /**
@@ -183,7 +241,11 @@ public extension Defines.Device.Model
              .macBookAir_11_Inch_2011,
              .macBookAir_11_Inch_2012,
              .macBookAir_11_Inch_2013,
-             .macBookAir_11_Inch_2015:
+             .macBookAir_11_Inch_2015,
+             .iPadPro_11_Inch,
+             .iPadPro_11_Inch_1TB,
+             .iPadPro_11_Inch_Cellular,
+             .iPadPro_11_Inch_1TB_Cellular:
             return true
         default:
             return false
@@ -212,7 +274,11 @@ public extension Defines.Device.Model
         case .iPadPro_12_9_Inch,
              .iPadPro_12_9_Inch_Cellular,
              .iPadPro_12_9_Inch_2ndGeneration,
-             .iPadPro_12_9_Inch_2ndGeneration_Cellular:
+             .iPadPro_12_9_Inch_2ndGeneration_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB,
+             .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular:
             return true
         default:
             return false

@@ -40,7 +40,11 @@ public extension Defines.Device.Model
              .appleWatchSeries3_38mm_GPS_Cellular,
              .appleWatchSeries3_42mm_GPS_Cellular,
              .appleWatchSeries3_38mm_GPS,
-             .appleWatchSeries3_42mm_GPS:
+             .appleWatchSeries3_42mm_GPS,
+             .appleWatchSeries4_40mm_GPS,
+             .appleWatchSeries4_44mm_GPS,
+             .appleWatchSeries4_40mm_GPS_Cellular,
+             .appleWatchSeries4_44mm_GPS_Cellular:
             return true
         default:
             return false

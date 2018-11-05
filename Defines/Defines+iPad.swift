@@ -68,7 +68,15 @@ public extension Defines.Device.Model
              .iPad_Mini_3_GSM,
              .iPad_Mini_3_China,
              .iPad_Mini_4,
-             .iPad_Mini_4_GSM:
+             .iPad_Mini_4_GSM,
+             .iPadPro_11_Inch,
+             .iPadPro_11_Inch_1TB,
+             .iPadPro_11_Inch_Cellular,
+             .iPadPro_11_Inch_1TB_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration,
+             .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular:
             return true
         default:
             return false
@@ -135,7 +143,15 @@ public extension Defines.Device.Model
              .iPadPro_12_9_Inch_2ndGeneration,
              .iPadPro_12_9_Inch_2ndGeneration_Cellular,
              .iPadPro_10_5_Inch,
-             .iPadPro_10_5_Inch_Cellular:
+             .iPadPro_10_5_Inch_Cellular,
+             .iPadPro_11_Inch,
+             .iPadPro_11_Inch_1TB,
+             .iPadPro_11_Inch_Cellular,
+             .iPadPro_11_Inch_1TB_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration,
+             .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular:
             return true
         default:
             return false

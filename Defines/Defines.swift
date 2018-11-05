@@ -109,6 +109,14 @@ public struct Defines
             case appleWatchSeries3_38mm_GPS = "Watch3,3"
             /// Watch Series 3 42mm (GPS) model identifier.
             case appleWatchSeries3_42mm_GPS = "Watch3,4"
+            /// Watch Series 4 40mm (GPS) model identifier.
+            case appleWatchSeries4_40mm_GPS = "Watch4,1"
+            /// Watch Series 4 42mm (GPS) model identifier.
+            case appleWatchSeries4_44mm_GPS = "Watch4,2"
+            /// Watch Series 4 40mm (GPS+Cellular) model identifier.
+            case appleWatchSeries4_40mm_GPS_Cellular = "Watch4,3"
+            /// Watch Series 4 42mm (GPS+Cellular) model identifier.
+            case appleWatchSeries4_44mm_GPS_Cellular = "Watch4,4"
 
             //MARK: Home Pod
             /// HomePod model identifier.
@@ -171,6 +179,22 @@ public struct Defines
             case iPad_6thGeneration = "iPad7,5"
             /// iPad (6th Generation) Cellular model identifier.
             case iPad_6thGeneration_Cellular = "iPad7,6"
+            /// iPad Pro 11" WiFi model identifier.
+            case iPadPro_11_Inch = "iPad8,1"
+            /// iPad Pro 11" WiFi with 1TB model identifier.
+            case iPadPro_11_Inch_1TB = "iPad8,2"
+            /// iPad Pro 11" Cellular model identifier.
+            case iPadPro_11_Inch_Cellular = "iPad8,3"
+            /// iPad Pro 11" Cellular with 1TB model identifier.
+            case iPadPro_11_Inch_1TB_Cellular = "iPad8,4"
+            /// iPad Pro 12.9" (3rd Generation) WiFi model identifier.
+            case iPadPro_12_9_Inch_3rdGeneration = "iPad8,5"
+            /// iPad Pro 12.9" (3rd Generation) WiFi with 1TB model identifier.
+            case iPadPro_12_9_Inch_3rdGeneration_1TB = "iPad8,6"
+            /// iPad Pro 12.9" (3rd Generation) Cellular model identifier.
+            case iPadPro_12_9_Inch_3rdGeneration_Cellular = "iPad8,7"
+            /// iPad Pro 12.9" (3rd Generation) Cellular with 1TB model identifier.
+            case iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular = "iPad8,8"
             /// iPad mini WiFi model identifier.
             case iPad_Mini = "iPad2,5"
             /// iPad mini CDMA model identifier.
@@ -239,6 +263,14 @@ public struct Defines
             case iPhoneX = "iPhone10,3"
             /// iPhone X (revision 2) model identifier.
             case iPhoneX_2 = "iPhone10,6"
+            /// iPhone XR model identifier.
+            case iPhoneXR = "iPhone11,8"
+            /// iPhone XR model identifier.
+            case iPhoneXS = "iPhone11,2"
+            /// iPhone XS Max model identifier.
+            case iPhoneXS_Max = "iPhone11,6"
+            /// iPhone XS Max (China) model identifier.
+            case iPhoneXS_Max_China = "iPhone11,4"
 
             //MARK: iPod touch
             /// iPod touch (5th Generation) model identifier.
