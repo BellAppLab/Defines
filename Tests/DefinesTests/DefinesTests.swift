@@ -44,10 +44,18 @@ class DefinesTests: XCTestCase
     }
 
     func testSimulator() {
+        #if swift(>=4.1)
+        #if targetEnvironment(simulator)
+        let simulator = true
+        #else
+        let simulator = false
+        #endif
+        #else
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
         let simulator = true
         #else
         let simulator = false
+        #endif
         #endif
 
         XCTAssertEqual(Defines.Device.isSimulator, simulator, "When running on the simulator, `isSimulator` should return true.")

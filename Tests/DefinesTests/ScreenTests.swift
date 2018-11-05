@@ -55,6 +55,25 @@ class ScreenTests: XCTestCase
         XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
     }
 
+    func test_40mm() {
+        let modelName = "Watch"
+        let keyPath = "is_40_mm"
+        let allModels = makeAllModels()
+
+        let collection: [Defines.Device.Model] = allModels.compacted {
+            guard $0.rawValue.contains(modelName) else { return nil }
+            switch $0 {
+            case .appleWatchSeries4_40mm_GPS,
+                 .appleWatchSeries4_40mm_GPS_Cellular:
+                return $0
+            default:
+                return nil
+            }
+        }
+        let trueCollection = allModels.compacted { $0.is_40_mm ? $0 : nil }
+        XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
+    }
+
     func test_42mm() {
         let modelName = "Watch"
         let keyPath = "is_42_mm"
@@ -74,6 +93,25 @@ class ScreenTests: XCTestCase
             }
         }
         let trueCollection = allModels.compacted { $0.is_42_mm ? $0 : nil }
+        XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
+    }
+
+    func test_44mm() {
+        let modelName = "Watch"
+        let keyPath = "is_44_mm"
+        let allModels = makeAllModels()
+
+        let collection: [Defines.Device.Model] = allModels.compacted {
+            guard $0.rawValue.contains(modelName) else { return nil }
+            switch $0 {
+            case .appleWatchSeries4_44mm_GPS,
+                 .appleWatchSeries4_44mm_GPS_Cellular:
+                return $0
+            default:
+                return nil
+            }
+        }
+        let trueCollection = allModels.compacted { $0.is_44_mm ? $0 : nil }
         XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
     }
 
@@ -168,9 +206,53 @@ class ScreenTests: XCTestCase
 
         let collection: [Defines.Device.Model] = allModels.compacted {
             guard $0.rawValue.contains(modelName) else { return nil }
-            return $0.isiPhoneX ? $0 : nil
+            switch $0 {
+            case .iPhoneX,
+                 .iPhoneX_2,
+                 .iPhoneXS:
+                return $0
+            default:
+                return nil
+            }
         }
         let trueCollection = allModels.compacted { $0.is_5_8_Inch ? $0 : nil }
+        XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
+    }
+
+    func test_6_1_Inch() {
+        let modelName = "iPhone"
+        let keyPath = "is_6_1_Inch"
+        let allModels = makeAllModels()
+
+        let collection: [Defines.Device.Model] = allModels.compacted {
+            guard $0.rawValue.contains(modelName) else { return nil }
+            switch $0 {
+            case .iPhoneXR:
+                return $0
+            default:
+                return nil
+            }
+        }
+        let trueCollection = allModels.compacted { $0.is_6_1_Inch ? $0 : nil }
+        XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
+    }
+
+    func test_6_5_Inch() {
+        let modelName = "iPhone"
+        let keyPath = "is_6_5_Inch"
+        let allModels = makeAllModels()
+
+        let collection: [Defines.Device.Model] = allModels.compacted {
+            guard $0.rawValue.contains(modelName) else { return nil }
+            switch $0 {
+            case .iPhoneXS_Max,
+                 .iPhoneXS_Max_China:
+                return $0
+            default:
+                return nil
+            }
+        }
+        let trueCollection = allModels.compacted { $0.is_6_5_Inch ? $0 : nil }
         XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
     }
 
@@ -221,25 +303,29 @@ class ScreenTests: XCTestCase
     }
 
     func test_11_Inch() {
-        let modelName = "Mac"
+        let modelNames = ["Mac", "iPad"]
         let keyPath = "is_11_Inch"
         let allModels = makeAllModels()
 
-        let collection: [Defines.Device.Model] = allModels.compacted {
-            guard $0.rawValue.contains(modelName) else { return nil }
-            switch $0 {
+        let collection: [Defines.Device.Model] = allModels.compacted { model in
+            guard modelNames.contains(where: { model.rawValue.contains($0) }) else { return nil }
+            switch model {
             case .macBookAir_11_Inch_2010,
                  .macBookAir_11_Inch_2011,
                  .macBookAir_11_Inch_2012,
                  .macBookAir_11_Inch_2013,
-                 .macBookAir_11_Inch_2015:
-                return $0
+                 .macBookAir_11_Inch_2015,
+                 .iPadPro_11_Inch,
+                 .iPadPro_11_Inch_1TB,
+                 .iPadPro_11_Inch_Cellular,
+                 .iPadPro_11_Inch_1TB_Cellular:
+                return model
             default:
                 return nil
             }
         }
         let trueCollection = allModels.compacted { $0.is_11_Inch ? $0 : nil }
-        XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
+        XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelNames) responding true to '\(keyPath)' is not correct")
     }
 
     func test_12_Inch() {
@@ -273,7 +359,11 @@ class ScreenTests: XCTestCase
             case .iPadPro_12_9_Inch,
                  .iPadPro_12_9_Inch_Cellular,
                  .iPadPro_12_9_Inch_2ndGeneration,
-                 .iPadPro_12_9_Inch_2ndGeneration_Cellular:
+                 .iPadPro_12_9_Inch_2ndGeneration_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration,
+                 .iPadPro_12_9_Inch_3rdGeneration_1TB,
+                 .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular:
                 return $0
             default:
                 return nil
@@ -501,12 +591,16 @@ class ScreenTests: XCTestCase
 
         let all_NoScreen = allModels.filter { $0.noScreen }
         let all_is_38_mm = allModels.filter { $0.is_38_mm }
+        let all_is_40_mm = allModels.filter { $0.is_40_mm }
         let all_is_42_mm = allModels.filter { $0.is_42_mm }
+        let all_is_44_mm = allModels.filter { $0.is_44_mm }
         let all_is_3_5_Inch = allModels.filter { $0.is_3_5_Inch }
         let all_is_4_Inch = allModels.filter { $0.is_4_Inch }
         let all_is_4_7_Inch = allModels.filter { $0.is_4_7_Inch }
         let all_is_5_5_Inch = allModels.filter { $0.is_5_5_Inch }
         let all_is_5_8_Inch = allModels.filter { $0.is_5_8_Inch }
+        let all_is_6_1_Inch = allModels.filter { $0.is_6_1_Inch }
+        let all_is_6_5_Inch = allModels.filter { $0.is_6_5_Inch }
         let all_is_7_9_Inch = allModels.filter { $0.is_7_9_Inch }
         let all_is_9_7_Inch = allModels.filter { $0.is_9_7_Inch }
         let all_is_10_5_Inch = allModels.filter { $0.is_10_5_Inch }
@@ -523,12 +617,16 @@ class ScreenTests: XCTestCase
         let allScreens = [
             all_NoScreen,
             all_is_38_mm,
+            all_is_40_mm,
             all_is_42_mm,
+            all_is_44_mm,
             all_is_3_5_Inch,
             all_is_4_Inch,
             all_is_4_7_Inch,
             all_is_5_5_Inch,
             all_is_5_8_Inch,
+            all_is_6_1_Inch,
+            all_is_6_5_Inch,
             all_is_7_9_Inch,
             all_is_9_7_Inch,
             all_is_10_5_Inch,
@@ -585,13 +683,17 @@ class ScreenTests: XCTestCase
                       "The all_UndefinedScreen array shouldn't have any elements in all the other screen arrays\n - all_UndefinedScreen: \(all_UndefinedScreen)\n - Other arrays: \(allScreens.removing(all_UndefinedScreen))")
 
         var missingScreens = allModels.filter { !all_is_38_mm.contains($0) }
+        missingScreens = missingScreens.filter { !all_is_40_mm.contains($0) }
         missingScreens = missingScreens.filter { !all_NoScreen.contains($0) }
         missingScreens = missingScreens.filter { !all_is_42_mm.contains($0) }
+        missingScreens = missingScreens.filter { !all_is_44_mm.contains($0) }
         missingScreens = missingScreens.filter { !all_is_3_5_Inch.contains($0) }
         missingScreens = missingScreens.filter { !all_is_4_Inch.contains($0) }
         missingScreens = missingScreens.filter { !all_is_4_7_Inch.contains($0) }
         missingScreens = missingScreens.filter { !all_is_5_5_Inch.contains($0) }
         missingScreens = missingScreens.filter { !all_is_5_8_Inch.contains($0) }
+        missingScreens = missingScreens.filter { !all_is_6_1_Inch.contains($0) }
+        missingScreens = missingScreens.filter { !all_is_6_5_Inch.contains($0) }
         missingScreens = missingScreens.filter { !all_is_7_9_Inch.contains($0) }
         missingScreens = missingScreens.filter { !all_is_9_7_Inch.contains($0) }
         missingScreens = missingScreens.filter { !all_is_10_5_Inch.contains($0) }

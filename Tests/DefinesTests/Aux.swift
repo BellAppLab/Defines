@@ -64,9 +64,9 @@ extension Array
 {
     func compacted<ElementOfResult>(_ transform: (Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult] {
         #if swift(>=4.0)
-        return compacted(transform)
+        return try compactMap(transform)
         #else
-        return (try? flatMap(transform)) ?? []
+        return try flatMap(transform)
         #endif
     }
 }

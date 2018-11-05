@@ -196,7 +196,23 @@ public extension Defines.Device.Model
              .iPad_6thGeneration,
              .iPad_6thGeneration_Cellular,
              .macBookPro_13_Inch_2018,
-             .macBookPro_15_Inch_2018:
+             .macBookPro_15_Inch_2018,
+             .appleWatchSeries4_40mm_GPS,
+             .appleWatchSeries4_44mm_GPS,
+             .appleWatchSeries4_40mm_GPS_Cellular,
+             .appleWatchSeries4_44mm_GPS_Cellular,
+             .iPadPro_11_Inch,
+             .iPadPro_11_Inch_1TB,
+             .iPadPro_11_Inch_Cellular,
+             .iPadPro_11_Inch_1TB_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB,
+             .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular,
+             .iPhoneXR,
+             .iPhoneXS,
+             .iPhoneXS_Max,
+             .iPhoneXS_Max_China:
             return 2018
         }
     }
@@ -214,7 +230,11 @@ public extension Defines.Device.Model
         case .appleWatchSeries3_38mm_GPS,
              .appleWatchSeries3_42mm_GPS,
              .appleWatchSeries3_38mm_GPS_Cellular,
-             .appleWatchSeries3_42mm_GPS_Cellular:
+             .appleWatchSeries3_42mm_GPS_Cellular,
+             .appleWatchSeries4_40mm_GPS,
+             .appleWatchSeries4_44mm_GPS,
+             .appleWatchSeries4_40mm_GPS_Cellular,
+             .appleWatchSeries4_44mm_GPS_Cellular:
             return true
         case .iPad_2_GSM,
              .iPad_2_CDMA,
@@ -237,7 +257,11 @@ public extension Defines.Device.Model
              .iPad_Mini_2_TD_LTE,
              .iPad_Mini_3_GSM,
              .iPad_Mini_3_China,
-             .iPad_Mini_4_GSM:
+             .iPad_Mini_4_GSM,
+             .iPadPro_11_Inch_Cellular,
+             .iPadPro_11_Inch_1TB_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular:
             return true
         case .iPhone4s,
              .iPhone5,
@@ -260,7 +284,11 @@ public extension Defines.Device.Model
              .iPhone8Plus,
              .iPhone8Plus_2,
              .iPhoneX,
-             .iPhoneX_2:
+             .iPhoneX_2,
+             .iPhoneXR,
+             .iPhoneXS,
+             .iPhoneXS_Max,
+             .iPhoneXS_Max_China:
             return true
         default:
             return false
@@ -278,7 +306,9 @@ public extension Defines.Device.Model
     public var hasCellular: Bool {
         switch self {
         case .appleWatchSeries3_38mm_GPS_Cellular,
-             .appleWatchSeries3_42mm_GPS_Cellular:
+             .appleWatchSeries3_42mm_GPS_Cellular,
+             .appleWatchSeries4_40mm_GPS_Cellular,
+             .appleWatchSeries4_44mm_GPS_Cellular:
             return true
         case .iPad_2_GSM,
              .iPad_2_CDMA,
@@ -301,7 +331,11 @@ public extension Defines.Device.Model
              .iPad_Mini_2_TD_LTE,
              .iPad_Mini_3_GSM,
              .iPad_Mini_3_China,
-             .iPad_Mini_4_GSM:
+             .iPad_Mini_4_GSM,
+             .iPadPro_11_Inch_Cellular,
+             .iPadPro_11_Inch_1TB_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+             .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular:
             return true
         case .iPhone4s,
              .iPhone5,
@@ -324,7 +358,11 @@ public extension Defines.Device.Model
              .iPhone8Plus,
              .iPhone8Plus_2,
              .iPhoneX,
-             .iPhoneX_2:
+             .iPhoneX_2,
+             .iPhoneXR,
+             .iPhoneXS,
+             .iPhoneXS_Max,
+             .iPhoneXS_Max_China:
             return true
         default:
             return false

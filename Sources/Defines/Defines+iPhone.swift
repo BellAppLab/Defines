@@ -52,7 +52,11 @@ public extension Defines.Device.Model
              .iPhone8Plus,
              .iPhone8Plus_2,
              .iPhoneX,
-             .iPhoneX_2:
+             .iPhoneX_2,
+             .iPhoneXR,
+             .iPhoneXS,
+             .iPhoneXS_Max,
+             .iPhoneXS_Max_China:
             return true
         default:
             return false
@@ -123,7 +127,24 @@ public extension Defines.Device.Model
     public var isiPhoneX: Bool {
         switch self {
         case .iPhoneX,
-             .iPhoneX_2:
+             .iPhoneX_2,
+             .iPhoneXR,
+             .iPhoneXS,
+             .iPhoneXS_Max,
+             .iPhoneXS_Max_China:
+            return true
+        default:
+            return false
+        }
+    }
+
+    /**
+     Returns true if the model is an iPhone Max (eg. iPhone XS Max).
+     */
+    public var isiPhoneMax: Bool {
+        switch self {
+        case .iPhoneXS_Max,
+             .iPhoneXS_Max_China:
             return true
         default:
             return false
@@ -175,5 +196,12 @@ public extension Defines.Device
      */
     public static let isiPhoneX: Bool = {
         return Defines.Device.currentModel.isiPhoneX
+    }()
+
+    /**
+     Returns true if the model is an iPhone Max (eg. iPhone XS Max).
+     */
+    public static let isiPhoneMax: Bool = {
+        return Defines.Device.currentModel.isiPhoneMax
     }()
 }

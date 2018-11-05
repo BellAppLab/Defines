@@ -15,7 +15,7 @@ class ModelTests: XCTestCase
 {
     func testAllModels() {
         let madeModels = makeAllModels()
-        XCTAssertEqual(madeModels.count, 155, "Have we misiPhoneSEd any models?")
+        XCTAssertEqual(madeModels.count, 171, "Have we missed any models?")
 
         var allModels: [Defines.Device.Model] = [
             .unknown,
@@ -31,10 +31,14 @@ class ModelTests: XCTestCase
             .appleWatchSeries1_42mm,
             .appleWatchSeries2_38mm,
             .appleWatchSeries2_42mm,
-            .appleWatchSeries3_42mm_GPS_Cellular,
             .appleWatchSeries3_38mm_GPS_Cellular,
+            .appleWatchSeries3_42mm_GPS_Cellular,
             .appleWatchSeries3_38mm_GPS,
             .appleWatchSeries3_42mm_GPS,
+            .appleWatchSeries4_40mm_GPS,
+            .appleWatchSeries4_44mm_GPS,
+            .appleWatchSeries4_40mm_GPS_Cellular,
+            .appleWatchSeries4_44mm_GPS_Cellular,
             .homePod_1,
             .homePod_2,
             .iPad_2,
@@ -75,6 +79,14 @@ class ModelTests: XCTestCase
             .iPad_Mini_3_China,
             .iPad_Mini_4,
             .iPad_Mini_4_GSM,
+            .iPadPro_11_Inch,
+            .iPadPro_11_Inch_1TB,
+            .iPadPro_11_Inch_Cellular,
+            .iPadPro_11_Inch_1TB_Cellular,
+            .iPadPro_12_9_Inch_3rdGeneration,
+            .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+            .iPadPro_12_9_Inch_3rdGeneration_1TB,
+            .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular,
             .iPhone4s,
             .iPhone5,
             .iPhone5_2,
@@ -97,6 +109,10 @@ class ModelTests: XCTestCase
             .iPhone8Plus_2,
             .iPhoneX,
             .iPhoneX_2,
+            .iPhoneXR,
+            .iPhoneXS,
+            .iPhoneXS_Max,
+            .iPhoneXS_Max_China,
             .iPodTouch_5thGeneration,
             .iPodTouch_6thGeneration,
             .macBookAir_2009,
@@ -201,20 +217,19 @@ class ModelTests: XCTestCase
         let all_iMac = madeModels.filter { $0.isiMac }
         let all_MacPro = madeModels.filter { $0.isMacPro }
 
-        let filteredModels = madeModels
-            .filter { !all_AirPods.contains($0) }
-            .filter { !all_AppleTVs.contains($0) }
-            .filter { !all_AppleWatch.contains($0) }
-            .filter { !all_HomePods.contains($0) }
-            .filter { !all_iPads.contains($0) }
-            .filter { !all_iPhone.contains($0) }
-            .filter { !all_iPodTouch.contains($0) }
-            .filter { !all_isMacBookAir.contains($0) }
-            .filter { !all_isMacBook.contains($0) }
-            .filter { !all_isMacBookPro.contains($0) }
-            .filter { !all_isMacMini.contains($0) }
-            .filter { !all_iMac.contains($0) }
-            .filter { !all_MacPro.contains($0) }
+        var filteredModels = madeModels.filter { !all_AirPods.contains($0) }
+        filteredModels = filteredModels.filter { !all_AppleTVs.contains($0) }
+        filteredModels = filteredModels.filter { !all_AppleWatch.contains($0) }
+        filteredModels = filteredModels.filter { !all_HomePods.contains($0) }
+        filteredModels = filteredModels.filter { !all_iPads.contains($0) }
+        filteredModels = filteredModels.filter { !all_iPhone.contains($0) }
+        filteredModels = filteredModels.filter { !all_iPodTouch.contains($0) }
+        filteredModels = filteredModels.filter { !all_isMacBookAir.contains($0) }
+        filteredModels = filteredModels.filter { !all_isMacBook.contains($0) }
+        filteredModels = filteredModels.filter { !all_isMacBookPro.contains($0) }
+        filteredModels = filteredModels.filter { !all_isMacMini.contains($0) }
+        filteredModels = filteredModels.filter { !all_iMac.contains($0) }
+        filteredModels = filteredModels.filter { !all_MacPro.contains($0) }
 
         XCTAssertTrue(filteredModels.elementsEqual([Defines.Device.Model.unknown]),
                       "All models should have been filtered. There's probably a model that isn't covered by 'is_{ModelName}' boolean variables. \nFiltered models: \(filteredModels)")
@@ -383,7 +398,15 @@ class ModelTests: XCTestCase
                  .iPadPro_12_9_Inch_2ndGeneration,
                  .iPadPro_12_9_Inch_2ndGeneration_Cellular,
                  .iPadPro_10_5_Inch,
-                 .iPadPro_10_5_Inch_Cellular:
+                 .iPadPro_10_5_Inch_Cellular,
+                 .iPadPro_11_Inch,
+                 .iPadPro_11_Inch_1TB,
+                 .iPadPro_11_Inch_Cellular,
+                 .iPadPro_11_Inch_1TB_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration,
+                 .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration_1TB,
+                 .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular:
                 return $0
             default:
                 return nil
@@ -492,13 +515,31 @@ class ModelTests: XCTestCase
             guard $0.rawValue.contains(modelName) else { return nil }
             switch $0 {
             case .iPhoneX,
-                 .iPhoneX_2:
+                 .iPhoneX_2,
+                 .iPhoneXR,
+                 .iPhoneXS,
+                 .iPhoneXS_Max,
+                 .iPhoneXS_Max_China:
                 return $0
             default:
                 return nil
             }
         }
         trueCollection = allModels.compacted { $0.isiPhoneX ? $0 : nil }
+        XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
+
+        keyPath = "isiPhoneMax"
+        collection = allModels.compacted {
+            guard $0.rawValue.contains(modelName) else { return nil }
+            switch $0 {
+            case .iPhoneXS_Max,
+                 .iPhoneXS_Max_China:
+                return $0
+            default:
+                return nil
+            }
+        }
+        trueCollection = allModels.compacted { $0.isiPhoneMax ? $0 : nil }
         XCTAssertTrue(collection.elementsEqual(trueCollection), "The number of \(modelName) responding true to '\(keyPath)' is not correct")
     }
 

@@ -182,7 +182,23 @@ class FeatureTests: XCTestCase
                  .iPad_6thGeneration,
                  .iPad_6thGeneration_Cellular,
                  .macBookPro_13_Inch_2018,
-                 .macBookPro_15_Inch_2018:
+                 .macBookPro_15_Inch_2018,
+                 .appleWatchSeries4_40mm_GPS,
+                 .appleWatchSeries4_44mm_GPS,
+                 .appleWatchSeries4_40mm_GPS_Cellular,
+                 .appleWatchSeries4_44mm_GPS_Cellular,
+                 .iPadPro_11_Inch,
+                 .iPadPro_11_Inch_1TB,
+                 .iPadPro_11_Inch_Cellular,
+                 .iPadPro_11_Inch_1TB_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration,
+                 .iPadPro_12_9_Inch_3rdGeneration_1TB,
+                 .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular,
+                 .iPhoneXR,
+                 .iPhoneXS,
+                 .iPhoneXS_Max,
+                 .iPhoneXS_Max_China:
                 year = 2018
             }
 
@@ -197,7 +213,11 @@ class FeatureTests: XCTestCase
             case .appleWatchSeries3_38mm_GPS,
                  .appleWatchSeries3_42mm_GPS,
                  .appleWatchSeries3_38mm_GPS_Cellular,
-                 .appleWatchSeries3_42mm_GPS_Cellular:
+                 .appleWatchSeries3_42mm_GPS_Cellular,
+                 .appleWatchSeries4_40mm_GPS,
+                 .appleWatchSeries4_44mm_GPS,
+                 .appleWatchSeries4_40mm_GPS_Cellular,
+                 .appleWatchSeries4_44mm_GPS_Cellular:
                 hasGPS = true
             case .iPad_2_GSM,
                  .iPad_2_CDMA,
@@ -220,7 +240,11 @@ class FeatureTests: XCTestCase
                  .iPad_Mini_2_TD_LTE,
                  .iPad_Mini_3_GSM,
                  .iPad_Mini_3_China,
-                 .iPad_Mini_4_GSM:
+                 .iPad_Mini_4_GSM,
+                 .iPadPro_11_Inch_Cellular,
+                 .iPadPro_11_Inch_1TB_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular:
                 hasGPS = true
             case .iPhone4s,
                  .iPhone5,
@@ -243,7 +267,11 @@ class FeatureTests: XCTestCase
                  .iPhone8Plus,
                  .iPhone8Plus_2,
                  .iPhoneX,
-                 .iPhoneX_2:
+                 .iPhoneX_2,
+                 .iPhoneXR,
+                 .iPhoneXS,
+                 .iPhoneXS_Max,
+                 .iPhoneXS_Max_China:
                 hasGPS = true
             default:
                 hasGPS = false
@@ -258,7 +286,9 @@ class FeatureTests: XCTestCase
             let hasCellular: Bool
             switch $0 {
             case .appleWatchSeries3_38mm_GPS_Cellular,
-                 .appleWatchSeries3_42mm_GPS_Cellular:
+                 .appleWatchSeries3_42mm_GPS_Cellular,
+                 .appleWatchSeries4_40mm_GPS_Cellular,
+                 .appleWatchSeries4_44mm_GPS_Cellular:
                 hasCellular = true
             case .iPad_2_GSM,
                  .iPad_2_CDMA,
@@ -281,7 +311,11 @@ class FeatureTests: XCTestCase
                  .iPad_Mini_2_TD_LTE,
                  .iPad_Mini_3_GSM,
                  .iPad_Mini_3_China,
-                 .iPad_Mini_4_GSM:
+                 .iPad_Mini_4_GSM,
+                 .iPadPro_11_Inch_Cellular,
+                 .iPadPro_11_Inch_1TB_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration_Cellular,
+                 .iPadPro_12_9_Inch_3rdGeneration_1TB_Cellular:
                 hasCellular = true
             case .iPhone4s,
                  .iPhone5,
@@ -304,7 +338,11 @@ class FeatureTests: XCTestCase
                  .iPhone8Plus,
                  .iPhone8Plus_2,
                  .iPhoneX,
-                 .iPhoneX_2:
+                 .iPhoneX_2,
+                 .iPhoneXR,
+                 .iPhoneXS,
+                 .iPhoneXS_Max,
+                 .iPhoneXS_Max_China:
                 hasCellular = true
             default:
                 hasCellular = false

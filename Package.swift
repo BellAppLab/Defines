@@ -12,6 +12,6 @@ let package = Package(
         .target(
             name: "Defines"
         ),
-        ],
+    ],
     swiftLanguageVersions: [3, 4]
 )
